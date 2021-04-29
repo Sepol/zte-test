@@ -236,12 +236,16 @@ a {
 
 .cell-table__responsible {
     margin-left: 80px;
-    white-space: nowrap
+    white-space: nowrap;
+}
+
+.cell-table__responsible img {
+    margin-right: 12px;
 }
 
 .cell-table__check {
-    width: 20.31px;
-    height: 20.31px;
+    width: 20px;
+    height: 20px;
     margin-left: 90px;
     margin-top: 8px
 }
@@ -354,5 +358,3 @@ input.check:focus + label {
         margin-left: -50px
     }
 }
-
-/*# sourceMappingURL=style.css.map */
