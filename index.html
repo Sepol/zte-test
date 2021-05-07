@@ -11,348 +11,568 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-
 <header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-1">
-                <div class="header-logo block">
-                    <a href="/" class="header-logo__link">
-                        <img class="header-logo__img" src="img/logo.png" alt="Логотип">
-                    </a>
-                </div>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <img src="img/logo-white.svg" alt=""> </a>
+            <div class="header-nav collapse navbar-collapse">
+                <ul class="header-menu navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Все устройства</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Где купить</a>
+                    </li>
+                    <li class="nav-item active" aria-current="page" href="#">
+                        <a class=" nav-link" href="#">Поддержка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Новости и обзоры</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col">
-                <div class="header-nav block">
-                    <nav class="nav header-nav__menu">
-                        <a href="/" class="nav-link header-nav__link"><img class="header-nav__img" src="img/logo.png"
-                                                                           alt="Логотип"></a>
-                        <li class="header-nav__list"><a href="#" class="nav-link header-nav__link">Все устройства</a>
-                        </li>
-                        <li class="header-nav__list"><a href="#" class="nav-link header-nav__link">Где купить</a></li>
-                        <li class="header-nav__list"><a href="#" class="nav-link header-nav__link">Поддержка</a></li>
-                        <li class="header-nav__list"><a href="#" class="nav-link header-nav__link">Новости и обзоры</a>
-                        </li>
-                    </nav>
+
+            <div class="nav-icons">
+                <div class="btn header-icon__btn languages">
+                    <img class="header-icon__img " src="img/languages.png" alt="Выбор языка">
                 </div>
-            </div>
-            <div class="col-1">
-                <div class="header-icons block">
-                    <button class="btn header-icon__btn">
-                        <img class="header-icon__img" src="img/languages.png" alt="Выбор языка">
-                    </button>
-                    <button class="btn header-icon__btn">
-                        <img class="header-icon__img" src="img/search.png" alt="Поиск">
-                    </button>
+                <div class="btn header-icon__btn search">
+                    <img class="header-icon__img " src="img/search.png" alt="Поиск">
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
+
 <section class="questions">
-    <div class="container">
-        <div class="questions-top">
+    <div class="container-fluid">
+        <div class="flex_container ">
             <h1 class="questions-top__title">Список задач</h1>
-            <button class="btn questions-top__btn">Фильтр</button>
-        </div>
-        <div class="questions-content">
-            <div class="row header-table">
-                <div class="col-1 header-table__status"><span>Статус</span></div>
-                <div class="col-1 header-table__ID">ID</div>
-                <div class="col-4 header-table__text">Текст вопроса</div>
-                <div class="col-1 header-table__modal">Модель телефона</div>
-                <div class="col-1.5 header-table__data">Дата создания</div>
-                <div class="col-1 header-table__region">Регион проживания</div>
-                <div class="col-1.5 header-table__time">Время ответа</div>
-                <div class="col-1 header-table__responsible">Ответственный</div>
-            </div>
-            <div id="first-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator"></div>
+            <form id="filter" class="questions-top__btn filter_btn">
+                <p class="filter_btn_title">
+                    Фильтр
+                </p>
+                <div class="filter_btn__body">
+                    <div class="filter_btn__body_section">
+                        <div class="select">
+                            <div class="select_head">
+                                <p class="select_head__title">Статус</p>
+
+                                <p class="select_head__value">
+                                    <!--
+                                        Сюда не надо заносить значение по умолчанию.
+                                        js сам заполняет при старте страницы смотрит какие input:checked
+                                    -->
+                                </p>
+
+                                <button class="select_head__btn">
+                                    <img src="img/arrow.png" alt="">
+                                </button>
+                            </div>
+                            <div class="select_body">
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b1" name="status" value="Все 1">
+                                    <label class="select_label" for="b1">Все 1</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b2" name="status" value="Все 2"
+                                           checked>
+                                    <label class="select_label" for="b2">Все 2</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b3" name="status" value="Все 3">
+                                    <label class="select_label" for="b3">Все 3</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b4" name="status" value="Все 4">
+                                    <label class="select_label" for="b4">Все 4</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b5" name="status" value="Все 5">
+                                    <label class="select_label" for="b5">Все 5</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b6" name="status" value="Все 6">
+                                    <label class="select_label" for="b6">Все 6</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b7" name="status" value="Все 7">
+                                    <label class="select_label" for="b7">Все 7</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="b8" name="status" value="Все 8">
+                                    <label class="select_label" for="b8">Все 8</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
+
+                <div class="filter_btn__body">
+                    <div class="filter_btn__body_section">
+                        <div class="select">
+                            <div class="select_head">
+                                <p class="select_head__title">Ответственный </p>
+
+                                <p class="select_head__value">
+
+                                </p>
+
+                                <button class="select_head__btn">
+                                    <img src="img/arrow.png" alt="">
+                                </button>
+                            </div>
+                            <div class="select_body">
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="a1" name="responsible"
+                                           value="Николаев Вячеслав 1">
+                                    <label class="select_label" for="a1"><img class="select_avatar"
+                                                                              src="img/avatar.png" alt=""> Николаев
+                                        Вячеслав 1</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="a2" name="responsible"
+                                           value="Николаев Вячеслав 2">
+                                    <label class="select_label" for="a2"><img class="select_avatar"
+                                                                              src="img/avatar.png" alt=""> Николаев
+                                        Вячеслав 2</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="a3" name="responsible"
+                                           value="Николаев Вячеслав 3" checked>
+                                    <label class="select_label" for="a3"><img class="select_avatar"
+                                                                              src="img/avatar.png" alt=""> Николаев
+                                        Вячеслав 3</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible">
-                    <img class="cell-table__img" src="img/avatar.png" alt="Аватар">Николаев Вячеслав
+
+                <div class="filter_btn__body">
+                    <div class="filter_btn__body_section">
+                        <div class="select">
+                            <div class="select_head">
+                                <p class="select_head__title">Заголовок/Тест</p>
+
+                                <p class="select_head__value">
+
+                                </p>
+
+                                <button class="select_head__btn">
+                                    <img src="img/arrow.png" alt="">
+                                </button>
+                            </div>
+                            <div class="select_body">
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="c1" name="title"
+                                           value="Завершенные 1">
+                                    <label class="select_label" for="c1"> Завершенные 1</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="c2" name="title"
+                                           value="Завершенные 2" checked>
+                                    <label class="select_label" for="c2"> Завершенные 2</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="c3" name="title"
+                                           value="Завершенные 3">
+                                    <label class="select_label" for="c3"> Завершенные 3</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="first" class="check">
-                    <label for="first">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
+
+                <div class="filter_btn__body">
+                    <div class="filter_btn__body_section">
+                        <div class="select">
+                            <div class="select_head">
+                                <p class="select_head__title">Статус выполнения</p>
+
+                                <p class="select_head__value">
+
+                                </p>
+
+                                <button class="select_head__btn">
+                                    <img src="img/arrow.png" alt="">
+                                </button>
+                            </div>
+                            <div class="select_body">
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="f1" name="execution_status"
+                                           value="В работе 1" checked>
+                                    <label class="select_label" for="f1"> В работе 1</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="f2" name="execution_status"
+                                           value="В работе 2">
+                                    <label class="select_label" for="f2"> В работе 2</label>
+                                </p>
+                                <p class="select_body_option">
+                                    <input type="radio" class="select_input" id="f3" name="execution_status"
+                                           value="В работе 3">
+                                    <label class="select_label" for="f3"> В работе 3</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div id="second-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator failed"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="second" class="check">
-                    <label for="second">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="third-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="third" class="check">
-                    <label for="third">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="four-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="four" class="check">
-                    <label for="four">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="five-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="five" class="check">
-                    <label for="five">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="six-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="six" class="check">
-                    <label for="six">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="seven-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="seven" class="check">
-                    <label for="seven">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="eight-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="eight" class="check">
-                    <label for="eight">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="nine-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator failed"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="nine" class="check">
-                    <label for="nine">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="ten-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator done"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="ten" class="check">
-                    <label for="ten">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
-            </div>
-            <div id="eleven-deleted" class="row cell-table">
-                <div class="col-1">
-                    <div class="cell-table__indicator"></div>
-                </div>
-                <div class="col-1 cell-table__ID">5656789</div>
-                <div class="col-4 cell-table__text">
-                    Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но только на вашем
-                    телефоне такие проблемы(
-                </div>
-                <div class="col-1 cell-table__modal">ZTE Blade L210</div>
-                <div class="col-1.5 cell-table__data">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__region">Северо-Западный</div>
-                <div class="col-1.5 cell-table__time">29.01.2020 19:30</div>
-                <div class="col-1 cell-table__responsible"><img class="cell-table__img" src="img/avatar.png"
-                                                                alt="Аватар">
-                    Николаев Вячеслав
-                </div>
-                <div class="col-1 cell-table__box">
-                    <input type="checkbox" id="eleven" class="check">
-                    <label for="eleven">
-                        <svg viewBox="0, 0, 50, 50" .join()>
-                            <path d="M5 30 L 20 45 L 45 5"></path>
-                        </svg>
-                    </label>
-                </div>
+
+            </form>
+            <div class="table-responsive questions-content ">
+                <table class="table table-hover table-sm">
+                    <thead class="header-table">
+                    <tr class="bor-none">
+                        <th class="headlines" scope="col">
+                            <p class="vertical"><span> Статус</span></p>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines ID">ID</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines">Текст вопроса</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines">Модель телефона</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines">Дата создания</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines">Регион проживания</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines">Время ответа</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines headlines-human">Ответственный</div>
+                        </th>
+                        <th scope="col">
+                            <div class="headlines"></div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="cell-table">
+                    <tr onclick="return url = '?query=1'" id="first-deleted" class="top-border">
+                        <th scope="row">
+                            <div class="cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="first" type="checkbox" class="check">
+                            <label for="first">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=2'" id="second-deleted">
+                        <th scope="row">
+                            <div class="failed cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="second" type="checkbox" class="check">
+                            <label for="second">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=3'" id="third-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="third" type="checkbox" class="check">
+                            <label for="third">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=4'" id="four-deleted">
+                        <th scope="row">
+                            <div class="cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(</p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="four" type="checkbox" class="check">
+                            <label for="four">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=5'" id="five-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(</p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="five" type="checkbox" class="check">
+                            <label for="five">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=6'" id="six-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator "></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(</p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="six" type="checkbox" class="check">
+                            <label for="six">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=7'" id="seven-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="seven" type="checkbox" class="check">
+                            <label for="seven">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=8'" id="eight-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="eight" type="checkbox" class="check">
+                            <label for="eight">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=9'" id="nine-deleted">
+                        <th scope="row">
+                            <div class="failed cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="nine" type="checkbox" class="check">
+                            <label for="nine">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=10'" id="ten-deleted">
+                        <th scope="row">
+                            <div class="done cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="ten" type="checkbox" class="check"/>
+                            <label for="ten">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr onclick="return url = '?query=11'" id="eleven-deleted">
+                        <th scope="row">
+                            <div class="cell-table__indicator"></div>
+                        </th>
+                        <td>5656789</td>
+                        <td>
+                            <p class="text">
+                                Вылетает приложение ”рро”. Не могу войти, все перепробовала. Но
+                                только на вашем телефоне
+                                такие проблемы(
+                            </p>
+                        </td>
+                        <td>ZTE Blade L210</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>Северо-Западный</td>
+                        <td class="data-bold">29.01.2020 19:30</td>
+                        <td>
+                            <div class="cell-table__responsible"><img src="img/avatar.png" alt="Аватар">
+                                <p>Николаев Вячеслав</p>
+                            </div>
+                        </td>
+                        <td class="input"><input id="eleven" type="checkbox" class="check">
+                            <label for="eleven">
+                                <svg viewBox="0, 0, 50, 50" .join()>
+                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                </svg>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
